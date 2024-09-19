@@ -6,6 +6,7 @@ This browser based web application to ...
 
 ## 2. Names of Contributors
 List team members and/or short bio's here... 
+* Heya, I'm Angelo! I'm looking forward to drinking coffee and coding :D
 * Hi! I'm James, I'm 27, like gaming, cooking and hanging out with friends~
 * Hey all, Marcy here! This project seems pretty cool.
 	
