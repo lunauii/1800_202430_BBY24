@@ -1,1 +1,47 @@
+/*
+* --------------------------------------------
+* AWESOME styles that are BETTER than BOOTSTRAP'S DEFAULT COLORS
+* --------------------------------------------
+*/
 
+/* Color Palette:
+* Light Text:         #f2fbf2      (text, contrast with dark)
+* Dark Text:          #363537
+* Dark Green (Primary):    #8CD867      
+* Light Green (Secondary): #c1ff72
+* Reddish-Brown (Accent):  #45ab34
+*/
+
+.bg-info {
+    background-color: #8CD867 !important; /* Light green for secondary backgrounds */
+}
+
+.navbar-light .navbar-brand, .navbar-light .navbar-nav .nav-link {
+    color: #363537;            /* Dark green for brand name & nav links for visibility */
+}
+
+.btn-info {
+    color: #f2fbf2;            /* Lightest shade for text on info button for contrast */
+    background-color: #8CD867; /* Light green for button background */
+    border-color: #005a00;     /* Dark green for button border */
+}
+
+.btn-primary {
+    color: #363537;            /* Dark shade for text */
+    font-size: 150%;
+    background-color: #8CD867; /* Light green for primary button background */
+    border-color: #227a22;     /* Darker green to match the light green */
+    border-width: thick;
+}
+
+.btn-primary:hover {
+    color: #302931;            /* Dark shade for text */
+    font-size: 150%;
+    background-color: #ceeebe; /* Light green for primary button background */
+    border-color: #45ab34;     /* Darker green to match the light green */
+    border-width: thick;
+}
+
+body {
+    background-color: #eeefee; /* Lightest shade for body background to follow the 60% rule */
+}
