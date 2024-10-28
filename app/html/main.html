@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>MealDex | Landing</title>
+    <title>MealDex | Home</title>
     <meta name="comp1800 template" content="MealDex App">
 
     <!-- Required meta tags -->
@@ -22,18 +22,16 @@
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
 
     <!-- Link to styles of your own -->
-    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="./styles/main-style.css">
 
 </head>
 
+
+<!-- BODY -->
 <body>
-
-    <!------------------------------>
-    <!-- Your HTML Layout go here -->
-    <!------------------------------>
-    <!-- Stuff for body goes here -->
-
-    <nav class="navbar navbar-expand-lg bg-body-tertiary\">
+    <div id="main-container">
+    <!-- NavBar -->
+    <nav id="nav" class="navbar navbar-expand-lg bg-body-tertiary\">
         <div class="container-fluid">
           <a class="navbar-brand" href="#"><img src="images/md-logo-icon-blk.svg" height="50px" width="50px"></a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -75,21 +73,21 @@
         <path fill-rule="evenodd" clip-rule="evenodd" d="M24.509 0c-6.733 0-11.715 5.893-11.492 12.284.214 6.14-.064 14.092-2.066 20.577C8.943 39.365 5.547 43.485 0 44.014v5.972c5.547.529 8.943 4.649 10.951 11.153 2.002 6.485 2.28 14.437 2.066 20.577C12.794 88.106 17.776 94 24.51 94H93.5c6.733 0 11.714-5.893 11.491-12.284-.214-6.14.064-14.092 2.066-20.577 2.009-6.504 5.396-10.624 10.943-11.153v-5.972c-5.547-.529-8.934-4.649-10.943-11.153-2.002-6.484-2.28-14.437-2.066-20.577C105.214 5.894 100.233 0 93.5 0H24.508zM80 57.863C80 66.663 73.436 72 62.543 72H44a2 2 0 01-2-2V24a2 2 0 012-2h18.437c9.083 0 15.044 4.92 15.044 12.474 0 5.302-4.01 10.049-9.119 10.88v.277C75.317 46.394 80 51.21 80 57.863zM60.521 28.34H49.948v14.934h8.905c6.884 0 10.68-2.772 10.68-7.727 0-4.643-3.264-7.207-9.012-7.207zM49.948 49.2v16.458H60.91c7.167 0 10.964-2.876 10.964-8.281 0-5.406-3.903-8.178-11.425-8.178H49.948z"></path>
       </symbol>
     </svg>
-    
-    <div class="container">
-      <div class="px-4 py-5 my-5 text-center">
-        <img class="d-block mx-auto mb-4" src="./images/md-logo-full-blk.svg" alt="" height="200">
-         <h1 class="display-5 fw-bold text-body-emphasis">The solution to all your dietary needs.</h1>
-         <div class="col-lg-6 mx-auto">
-          <p class="lead mb-4">A database of restaurants for your allergies and dietary restrictions.</p>
-          <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-            <button type="button" class="btn btn-primary btn-lg px-4 gap-3">Sign up</button>
-            <button type="button" class="btn btn-outline-secondary btn-lg px-4">Log in</button>
-          </div>
-        </div>
-      </div>
-    </div>
 
+    <!-- Resturaunts -->
+     <div class="container" id="restaurants">
+        This is where we can link to featured resturuants or something, instead of a blind search
+     </div>
+
+     <!-- Content -->
+        <div class="container" id="content1">Content 1</div>
+        <div class="container" id="content2">Content 2</div>
+        <div class="container" id="content3">Content 3</div>
+        <div class="container" id="content4">Content 4</div>
+    
+    
+ 
+    <!-- Footer -->
     <div class="container" id="footer">
       <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
         <p id="footer-blurb" class="col-md-4 mb-0 text-body-secondary">Powered by the MealDex Team, 2024-2025</p>
@@ -108,12 +106,15 @@
       </footer>
     </div>
 
+</div>
+
     <!---------------------------------------------->
     <!-- Your own JavaScript functions go here    -->
     <!---------------------------------------------->
 
     <!-- Link to scripts of your own -->
     <!-- <script src="./scripts/script.js"></script> -->
+
 
 </body>
 
