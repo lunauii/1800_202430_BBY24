@@ -1,62 +1,47 @@
-# Project Title
+<p align="center">
+  <img width="650" alt="MealDex logo" src="public/images/md-logo-full-blk.svg">
+</p>
 
-## 1. Project Description
-State your app in a nutshell, or one-sentence pitch. Give some elaboration on what the core features are.  
-This browser based web application to ... 
+# MealDex
 
-## 2. Names of Contributors
-List team members and/or short bio's here... 
+[![GitHub release](https://img.shields.io/github/release/ppy/osu.svg)](https://github.com/ppy/osu/releases/latest)
+
+The solution to all your dietary needs.
+
+Our team, Coding for 24h, is developing a the web app MealDex to help people with allergies or food restrictions to find suitable menus for them  by providing them with an easy to digest database that is tailored to their needs.
+
+## Team Bios
 * Heya, I'm Angelo! I'm looking forward to drinking coffee and coding :D
 * Hi! I'm James, I'm 27, like gaming, cooking and hanging out with friends~
 * Hey all, Marcy here! This project seems pretty cool.
 	
-## 3. Technologies and Resources Used
-List technologies (with version numbers), API's, icons, fonts, images, media or data sources, and other resources that were used.
+## Technology Used
 * HTML, CSS, JavaScript
 * Bootstrap 5.0 (Frontend library)
 * Firebase 8.0 (BAAS - Backend as a Service)
-* Node.js (runtime environment)
-* Express.js (Node.js web framework)
+* Node.js 23.1.0 (runtime environment)
+* Express.js 4.21.1 (Node.js web framework)
 
-## 4. Complete setup/installion/usage
-State what a user needs to do when they come to your project.  How do others start using your code or application?
-Here are the steps ...
-* ...
-* ...
-* ...
+## Developing MealDex
 
-## 5. Known Bugs and Limitations
-Here are some known bugs:
-* ...
-* ...
-* ...
+### Prerequisites
 
-## 6. Features for Future
-What we'd like to build in the future:
-* ...
-* ...
-* ...
-	
-## 7. Contents of Folder
-Content of the project folder:
+Dolore nulla aliquip cupidatat ex velit velit sunt enim tempor consequat ipsum in irure dolore.
 
-```
- Top level of project folder: 
-├── .gitignore               # Git ignore file
-├── index.html               # landing HTML file, this is what users see when you come to url
-└── README.md
+### Cloning the repository
 
-It has the following subfolders and files:
-├── .git                     # Folder for git repo
-├── images                   # Folder for images
-    /blah.jpg                # Acknowledge source
-├── scripts                  # Folder for scripts
-    /blah.js                 # 
-├── styles                   # Folder for styles
-    /blah.css                # 
+Amet esse eu do cupidatat minim aliquip magna
 
+### Testing
 
+Ea pariatur incididunt cupidatat cupidatat irure consequat ea ea nisi.
 
-```
+## Bugs
+
+(insert issues here)
+
+## Upcoming Features
+
+Laboris est velit adipisicing eiusmod magna. Amet in sunt nostrud pariatur deserunt aliqua aliqua deserunt occaecat consequat. Tempor aute occaecat adipisicing eu consequat quis ex eu eiusmod minim. Aliqua sint Lorem voluptate consequat eu elit pariatur exercitation duis. Et occaecat reprehenderit ullamco tempor elit enim minim. Quis proident pariatur velit ullamco esse magna cillum elit consequat adipisicing excepteur enim magna.
 
 

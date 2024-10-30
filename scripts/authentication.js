@@ -19,12 +19,12 @@ var uiConfig = {
     signInSuccessUrl: "main.html",
     signInOptions: [
     
-        /* 
-        *  FROM ANGELO
-        *  The Google and Facebook sign-in options are commented out because they require additional setup
-        *  and I am not sure if we want to use them. I have left them here for reference. Same goes for
-        *  the Phone sign-in option.
-        */
+    /* 
+     *  FROM ANGELO
+     *  The Google and Facebook sign-in options are commented out because they require additional setup
+     *  and I am not sure if we want to use them. I have left them here for reference. Same goes for
+     *  the Phone sign-in option.
+     */
     //   firebase.auth.GoogleAuthProvider.PROVIDER_ID,
     //   firebase.auth.FacebookAuthProvider.PROVIDER_ID,
       firebase.auth.EmailAuthProvider.PROVIDER_ID,
