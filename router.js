@@ -11,6 +11,7 @@ app.use("/scripts", express.static("./public/scripts"));
 app.use("/styles", express.static("./public/styles"));
 app.use("/images", express.static("./public/images"));
 app.use("/text", express.static("./public/text"));
+app.use("/html", express.static("./app/html"));
 
 app.get("/", function (req, res) {
     //console.log(process.env);
@@ -65,4 +66,5 @@ app.use(function (req, res, next) {
 let port = 8000;
 app.listen(port, function () {
     console.log("Testing, testing. Check port " + port + ".");
+    console.log("localhost:" + port);
 });
