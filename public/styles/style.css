@@ -28,18 +28,20 @@
 
 .btn-primary {
     color: #363537;            /* Dark shade for text */
-    font-size: 150%;
+    font-size: 100%;
     background-color: #8CD867; /* Light green for primary button background */
     border-color: #227a22;     /* Darker green to match the light green */
-    border-width: thick;
+}
+
+#hero-btn {
+    font-size:150%
 }
 
 .btn-primary:hover {
     color: #302931;            /* Dark shade for text */
-    font-size: 150%;
+    font-size: 100%;
     background-color: #ceeebe; /* Light green for primary button background */
     border-color: #45ab34;     /* Darker green to match the light green */
-    border-width: thick;
 }
 
 body {
