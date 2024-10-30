@@ -5,4 +5,4 @@ node_modules
 .vscode/
 scripts/firebaseAPI_BBY24.js
 package-lock.json
-package.json
+package.json.DS_Store
