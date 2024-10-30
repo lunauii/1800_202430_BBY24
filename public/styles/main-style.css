@@ -61,34 +61,38 @@
 /* FOOTER - IN PROGRESS */
 #footer{
     grid-area: footer;
+    background-color: lightblue;
+    width: 100%;
+    grid-gap: 4px;
     display: grid;
+    grid-template-rows: 100%;
     grid-template-columns: 25% 25% 25% 25%;
     grid-template-areas:
-    "footer-home footer-restaurants footer-messages footer-profile"
+    "footer-home footer-restaurants footer-messages footer-profile";
 }
 
 #footer-home {
-    height: 30px;
     grid-area: footer-home;
-    margin: 10px auto auto auto;
+    height: 30px;
+    background-color: green;
 }
 
 #footer-restaurants {
-    height: 30px;
     grid-area: footer-restaurants;
-    margin: 10px auto auto auto;
+    height: 30px;
+    background-color: blue;
 }
 
 #footer-messages {
-    height: 30px;
     grid-area: footer-messages;
-    margin: 10px auto auto auto;
+    height: 30px;
+    background-color: red;
 }
 
 #footer-profile {
-    height: 30px;
     grid-area: footer-profile;
-    margin: 10px auto auto auto;
+    height: 30px;
+    background-color: yellow;
 }
 
 .bg-info {
