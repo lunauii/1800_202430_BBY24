@@ -11,7 +11,6 @@ app.use("/scripts", express.static("./public/scripts"));
 app.use("/styles", express.static("./public/styles"));
 app.use("/images", express.static("./public/images"));
 app.use("/text", express.static("./public/text"));
-app.use("/html", express.static("./app/html"));
 
 app.get("/", function (req, res) {
     //console.log(process.env);

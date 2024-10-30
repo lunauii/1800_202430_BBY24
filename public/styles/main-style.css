@@ -61,11 +61,11 @@
 /* FOOTER - IN PROGRESS */
 #footer{
     grid-area: footer;
-    background-color: lightblue;
+    border:2px solid black;
     width: 100%;
     grid-gap: 4px;
     display: grid;
-    grid-template-rows: 100%;
+    grid-template-rows: 1fr;
     grid-template-columns: 25% 25% 25% 25%;
     grid-template-areas:
     "footer-home footer-restaurants footer-messages footer-profile";
@@ -73,26 +73,26 @@
 
 #footer-home {
     grid-area: footer-home;
+    margin: 10px auto auto 45%;
     height: 30px;
-    background-color: green;
 }
 
 #footer-restaurants {
     grid-area: footer-restaurants;
+    margin: 10px auto auto 45%;
     height: 30px;
-    background-color: blue;
 }
 
 #footer-messages {
     grid-area: footer-messages;
+    margin: 10px auto auto 45%;
     height: 30px;
-    background-color: red;
 }
 
 #footer-profile {
     grid-area: footer-profile;
+    margin: 10px auto auto 45%;
     height: 30px;
-    background-color: yellow;
 }
 
 .bg-info {
