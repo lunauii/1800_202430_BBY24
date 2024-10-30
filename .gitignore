@@ -3,6 +3,6 @@
 public/scripts/node_modules/
 node_modules
 .vscode/
-scripts/firebaseAPI_BBY24.js
+public/scripts/firebaseAPI_BBY24.js
 package-lock.json
 package.json.DS_Store
