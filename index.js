@@ -6,26 +6,19 @@ const app = express();
 app.use(express.json());
 const fs = require("fs");
 
+// set the paths variable to a dictionary set in paths.json
+const paths = require("./paths.json");
+
 // Virtual paths!
 app.use("/scripts", express.static("./public/scripts"));
 app.use("/styles", express.static("./public/styles"));
 app.use("/images", express.static("./public/images"));
 app.use("/text", express.static("./public/text"));
 
-// match vpaths to actual file paths
-const routes = [
-    { path: "/", file: "./app/html/index.html" },
-    { path: "/login", file: "./app/html/login.html" },
-    { path: "/main", file: "./app/html/main.html" },
-    { path: "/about", file: "./app/html/about.html" },
-    { path: "/FAQ", file: "./app/html/FAQ.html" },
-    { path: "/features", file: "./app/html/features.html" }
-];
-
-// loop through each routes dictionary value and create app.get handlers
-routes.forEach(route => {
-    app.get(route.path, function (req, res) {
-        let doc = fs.readFileSync(route.file, "utf8");
+// loop through each paths.json dictionary key route them to the dictionary value
+routes.forEach(paths => {
+    app.get(paths.path, function (req, res) {
+        let doc = fs.readFileSync(paths.file, "utf8");
         res.send(doc);
     });
 });
