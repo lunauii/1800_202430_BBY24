@@ -2,8 +2,8 @@
 <html lang="en">
 
 <head>
-    <title>MealDex | Home</title>
-    <meta name="comp1800 template" content="MealDex App">
+    <title>MealDex Template</title>
+    <meta name="MealDex" content="MealDex App">
 
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -27,46 +27,54 @@
 
 </head>
 
-
-<!-- BODY -->
 <body>
-    <div id="main-container">
-    <!-- NavBar -->
+
     <nav id="navbarPlaceholder"></nav>
+    <!------------------------------>
+    <!-- Your HTML Layout go here -->
+    <!------------------------------>
+    <!-- Stuff for body goes here -->
 
-    
-    <!-- Resturaunts -->
-     <a href="/restaurant" id="restaurants"><div class="container">
-        This is where a featured restaurant might be!
-     </div></a>
-
-     <!-- Content -->
-        <div class="container" id="content1">Content 1</div>
-        <div class="container" id="content2">Content 2</div>
-        <div class="container" id="content3">Content 3</div>
-        <div class="container" id="content4">Content 4</div>
-    
-    
-    <!-- TO DO: FIX LINKS WHEN NEW PAGES ARE ADDED-->
-    <!-- Footer -->
-    <div class="container" id="footer">
-          <a src="./main"><img id="footer-home" alt="home-logo" src="/images/home-logo.png"></a>
-          <a src="./restaurant"><img id="footer-restaurants" alt="restaurant-logo" src="/images/cutlery-icon.png"></a>
-          <a href="https://en.wikipedia.org/wiki/Message"><img id="footer-messages" alt="messages-logo" src="/images/messages-icon.png"></a>
-          <a href="/profile"><img id="footer-profile" alt="profile-logo" src="/images/profile-icon.png"></a>
+    <div class="container">
+        <h1>User Profile</h1>
+        <form>
+            <fieldset class="mb-3" id="personalInfoFields" disabled>
+                <div class="form-group">
+                    <label >Name</label>
+                    <input type="text" id="nameInput" class="form-control" placeholder="Enter your name">
+                </div>
+                <div class="form-group">
+                    <label >School</label>
+                    <input type="text" id="schoolInput" class="form-control" placeholder="Enter your school">
+                </div>
+                <div class="form-group">
+                    <label >City</label>
+                    <input type="text" id="cityInput" class="form-control" placeholder="Enter your city">
+                </div>
+            </fieldset>
+            <div class="d-flex justify-content-end mt-5">
+                <button type="button" class="btn btn-secondary" onclick="editUserInfo()">Edit</button>
+                <span style="width: 10px"></span>
+                <button type="button" class="btn btn-info" onclick="saveUserInfo()">Save</button>
+            </div>
+        </form>
     </div>
 
-</div>
+    <!-- Footer -->
+    <div class="container" id="footer">
+        <a href="/main"><img id="footer-home" alt="home-logo" src="/images/home-logo.png"></a>
+        <a href="https://en.wikipedia.org/wiki/Restaurant"><img id="footer-restaurants" alt="restaurant-logo" src="/images/cutlery-icon.png"></a>
+        <a href="https://en.wikipedia.org/wiki/Message"><img id="footer-messages" alt="messages-logo" src="/images/messages-icon.png"></a>
+        <a href="/profile"><img id="footer-profile" alt="profile-logo" src="/images/profile-icon.png"></a>
+    </div>
 
     <!---------------------------------------------->
     <!-- Your own JavaScript functions go here    -->
     <!---------------------------------------------->
-
-    <!-- Link to scripts of your own -->
+     
     <script src="scripts/firebaseAPI_BBY24.js"></script>
     <script src="scripts/skeleton.js"></script> 
     <script src="scripts/script.js"></script>
-
 
 </body>
 
