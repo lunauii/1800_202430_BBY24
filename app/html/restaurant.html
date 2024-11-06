@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>MealDex | Restaurant Template</title>
+    <title>MealDex | Resturaunts</title>
     <meta name="comp1800 template" content="MealDex App">
 
     <!-- Required meta tags -->
@@ -22,7 +22,7 @@
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
 
     <!-- Link to styles of your own -->
-    <link rel="stylesheet" href="styles/main-style.css">
+    <link rel="stylesheet" href="styles/restaurant.css">
 
 </head>
 
@@ -33,21 +33,24 @@
     <!-- NavBar -->
     <nav id="navbarPlaceholder"></nav>
 
-    <!-- TO DO: REPLACE LINK WHEN RESTURAUNT TEMPLATE IS ADDED! -->
-    <!-- Resturaunts -->
-     <div class="container" id="restaurants">
-        <img src="/images/restaurant-template">
-     </div>
+    
+    <!-- Resturaunt Image -->
+     <div class="container" id="restaurants-content">
+        <img id="restaurant-image" src="images/restaurant-template.jpg">
+      </div>
 
      <!-- Content -->
-        <div class="container" id="menu">Menu <br> menu item 1 <br> menu item 2</div>
+        <div class="container" id="content1">Content 1</div>
+        <div class="container" id="content2">Content 2</div>
+        <div class="container" id="content3">Content 3</div>
+        <div class="container" id="content4">Content 4</div>
     
     
     <!-- TO DO: FIX LINKS WHEN NEW PAGES ARE ADDED-->
     <!-- Footer -->
     <div class="container" id="footer">
-          <a href="/main"><img id="footer-home" alt="home-logo" src="/images/home-logo.png"></a>
-          <a href="https://en.wikipedia.org/wiki/Restaurant"><img id="footer-restaurants" alt="restaurant-logo" src="/images/cutlery-icon.png"></a>
+          <a src="./main"><img id="footer-home" alt="home-logo" src="/images/home-logo.png"></a>
+          <a src="./restaurant"><img id="footer-restaurants" alt="restaurant-logo" src="/images/cutlery-icon.png"></a>
           <a href="https://en.wikipedia.org/wiki/Message"><img id="footer-messages" alt="messages-logo" src="/images/messages-icon.png"></a>
           <a href="https://en.wikipedia.org/wiki/Profile"><img id="footer-profile" alt="profile-logo" src="/images/profile-icon.png"></a>
     </div>

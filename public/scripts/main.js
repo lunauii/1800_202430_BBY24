@@ -11,6 +11,21 @@ function logout() {
       });
 }
 
+function writeRestaurantLoop(max) {
+  //define a variable for the collection you want to create in Firestore to populate data
+  var restaurantsRef = db.collection("restaurants");
+  for (i = 1; i <= max; i++) {
+      restaurantsRef.add({ //add to database, autogen ID
+          name: "restaurant" + i,
+          description: "Welcome to the restaurant page for restaurant" + i + ".",
+          address: "123 Test Lane",   
+          city: "Chicago", 
+          region: "IL",
+          last_updated: firebase.firestore.FieldValue.serverTimestamp()
+      })
+ }
+}
+
 function getNameFromAuth() {
   firebase.auth().onAuthStateChanged(user => {
       // Check if a user is signed in:
