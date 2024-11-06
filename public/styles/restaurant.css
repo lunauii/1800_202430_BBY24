@@ -6,11 +6,11 @@
     height: 1vh;
     width: 90%;
     grid-template-columns: 25% 25% 25% 25%;
-    grid-template-rows: 100px 500px 300px 50px;
+    grid-template-rows: 100px 500px 1fr 50px;
      grid-template-areas:
      "nav nav nav nav"
      "restaurants restaurants restaurants restaurants"
-     "content1 content2 content3 content4"
+     "menu menu menu menu"
      "footer footer footer footer";     
 }
 
@@ -18,35 +18,71 @@
   grid-area: nav;
 }
 
-#restaurants-content{
-    text-align: center;
+#restaurants-content {
     grid-area: restaurants;
+    position: relative;
 }
 
 #restaurant-image{
-    height: auto;
+    height: 100%;
     width: 100%;
     object-fit: cover;
 }
 
-#content1{
-    background-color: #45ab34;
+#restaurant-name{
+    width: 300px;
+    height: 35px;
+    background-color: whitesmoke;
+    position: absolute;
+    bottom: 45px;
+    left: 0;
+    right: 50%;
+    z-index: 2;
+    opacity: 80%;
+    color: #302931;
+}
+
+#menu {
+    grid-area: menu;
+    margin: 0 auto;
+    border:2px solid black;
+    grid-gap: 2px;
+    display: grid;
+    height: 100%;
+    width: 100%;
+    grid-template-columns: 100%;
+    grid-template-rows: 30px 30px 30px 30px 30px;
+     grid-template-areas:
+     "content1"
+     "content2"
+     "content3"
+     "content4"
+     "content5"
+}
+
+#menu-item-1{
     grid-area: content1;
+    background-color: green;
 }
 
-#content2{
-    background-color: #005a00;
+#menu-item-2{
     grid-area: content2;
+    background-color: greenyellow;
 }
 
-#content3{
-    background-color: #45ab34;
+#menu-item-3{
     grid-area: content3;
+    background-color: green;
 }
 
-#content4{
-    background-color: #005a00;
+#menu-item-4{
     grid-area: content4;
+    background-color: greenyellow;
+}
+
+#menu-item-5{
+    grid-area: content5;
+    background-color: green;
 }
 
 
