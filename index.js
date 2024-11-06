@@ -14,6 +14,7 @@ app.use("/scripts", express.static("./public/scripts"));
 app.use("/styles", express.static("./public/styles"));
 app.use("/images", express.static("./public/images"));
 app.use("/text", express.static("./public/text"));
+app.use("/", express.static("./data/html"));
 
 // loop through each paths.json dictionary key route them to the dictionary value
 paths.forEach(paths => { 
