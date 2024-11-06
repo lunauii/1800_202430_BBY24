@@ -14,6 +14,7 @@
     <!-- Boostrap Library JS CDN  go here -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <!-- Other libraries go here -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
@@ -22,7 +23,6 @@
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
 
     <!-- Link to styles of your own -->
-    <link rel="stylesheet" href="/styles/restaurant.css">
 
 </head>
 
@@ -30,37 +30,32 @@
 <!-- BODY -->
 <body>
     <div id="main-container">
-    <!-- NavBar -->
-    <nav id="nav"></nav>
+        <!-- NavBar -->
+        <nav id="navbarPlaceholder"></nav>
 
-    
-    <!-- Resturaunt Image -->
-     <div class="container" id="restaurants-content">
-        <img id="restaurant-image" src="/images/restaurant-template.jpg">
-        <p id="restaurant-name">The Restaurant Name</p>
-      </div>
-
-     <!-- Content -->
-        <div class="container" id="menu">
-            <div id="menu-item-1">Menu Item 1</div>
-            <div id="menu-item-2">Menu Item 2</div>
-            <div id="menu-item-3">Menu Item 3</div>
-            <div id="menu-item-4">Menu Item 4</div>
-            <div id="menu-item-5">Menu Item 5</div>
-        </div>
         
-    
-    
-    <!-- TO DO: FIX LINKS WHEN NEW PAGES ARE ADDED-->
-    <!-- Footer -->
-    <div class="container" id="footer">
-          <a src="./"><img id="footer-home" alt="home-logo" src="/images/home-logo.png"></a>
-          <a src="./restaurant.html"><img id="footer-restaurants" alt="restaurant-logo" src="/images/cutlery-icon.png"></a>
-          <a href="https://en.wikipedia.org/wiki/Message"><img id="footer-messages" alt="messages-logo" src="/images/messages-icon.png"></a>
-          <a href="https://en.wikipedia.org/wiki/Profile"><img id="footer-profile" alt="profile-logo" src="/images/profile-icon.png"></a>
-    </div>
+        <!-- Resturaunt Image -->
+        <div class="container" id="restaurants-content">
+            <img id="restaurant-image" src="/images/restaurant-template.jpg">
+            <p id="restaurant-name">The Restaurant Name</p>
+        </div>
 
-</div>
+        <!-- Content -->
+            <div class="container" id="menu">
+                <div id="menu-item-1">Menu Item 1</div>
+                <div id="menu-item-2">Menu Item 2</div>
+                <div id="menu-item-3">Menu Item 3</div>
+                <div id="menu-item-4">Menu Item 4</div>
+                <div id="menu-item-5">Menu Item 5</div>
+            </div>
+            
+        
+        
+        <!-- TO DO: FIX LINKS WHEN NEW PAGES ARE ADDED-->
+        <!-- Footer -->
+        <nav id="footerPlaceholder"></nav>
+
+    </div>
 
     <!---------------------------------------------->
     <!-- Your own JavaScript functions go here    -->
