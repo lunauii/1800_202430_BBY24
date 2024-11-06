@@ -31,26 +31,57 @@
 <!-- BODY -->
 <body>
     <div id="main-container">
-    <!-- NavBar -->
-    <nav id="navbarPlaceholder"></nav>
+        <!-- NavBar -->
+        <nav id="navbarPlaceholder"></nav>
 
-    
-    <!-- Resturaunts -->
-     <a href="./restaurant.html" id="restaurants"><div class="container">
-        This is where a featured restaurant might be!
-     </div></a>
+        
+        <!-- Resturaunts -->
+        <div class="container"> 
+            <h1>Some popular restaurants</h1>
+            <!-- Here is the container for cards  -->
+            <div class="container">
+                <div id="restaurants-go-here" class="row row-cols-1 row-cols-md-2 g-4">
+                </div>
+            </div>
+        </div>
+        
+        <!-- TO DO: FIX LINKS WHEN NEW PAGES ARE ADDED-->
+        <!-- Footer -->
+        <nav id="footerPlaceholder"></nav>
 
-     <!-- Content -->
-        <div class="container" id="content1">Content 1</div>
-        <div class="container" id="content2">Content 2</div>
-        <div class="container" id="content3">Content 3</div>
-        <div class="container" id="content4">Content 4</div>
-    
-    
-    <!-- Footer -->
-    <nav id="footerPlaceholder"></nav>
+    </div>
 
-</div>
+    <!-- Templates for general use, not displayed -->
+    <!-- <template id="restaurantCardTemplate">
+        <div class="card mb-3" style="max-width: 540px;">
+            <div class="row g-0">
+            <div class="col-md-4">
+                <img src="..." class="img-fluid rounded-start card-image" alt="...">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    <p class="card-location"><small class="text-body-secondary">Location</small></p>
+                    <a class="btn btn-primary card-href">Read more ...</a>
+                </div>
+            </div>
+            </div>
+        </div>
+    </template> -->
+
+    <template id="restaurantCardTemplate">
+            <div class="card mb-3">
+                <img src="..." class="card-img-top card-image" alt="...">
+                <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                <p class="card-location"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+                <a class="btn btn-primary card-href">More -></a>
+                </div>
+            </div>
+    </template>
+    
 
     <!---------------------------------------------->
     <!-- Your own JavaScript functions go here    -->
@@ -58,6 +89,7 @@
 
     <!-- Link to scripts of your own -->
     <script src="/scripts/firebaseAPI_BBY24.js"></script>
+    <script src="/scripts/main.js"></script>
     <script src="/scripts/skeleton.js"></script> 
     <script src="/scripts/script.js"></script>
 
