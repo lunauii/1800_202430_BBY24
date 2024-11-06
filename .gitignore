@@ -1,8 +1,4 @@
 .DS_Store
 *.logs
-public/scripts/node_modules/
-node_modules
 .vscode/
-public/scripts/firebaseAPI_BBY24.js
-package-lock.json
-package.json.DS_Store
+scripts/firebaseAPI_BBY24.js

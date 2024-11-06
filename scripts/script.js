@@ -7,5 +7,6 @@ function logout() {
         console.log("logging out user");
       }).catch((error) => {
         // An error happened.
+        console.log("Error logging out.");
       });
 }
