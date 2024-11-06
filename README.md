@@ -19,8 +19,6 @@ Our team, Coding for 24h, is developing a the web app MealDex to help people wit
 * HTML, CSS, JavaScript
 * Bootstrap 5.0 (Frontend library)
 * Firebase 8.0 (BAAS - Backend as a Service)
-* Node.js 23.1.0 (runtime environment)
-* Express.js 4.21.1 (Node.js web framework)
 
 ## Developing MealDex
 
