@@ -4,5 +4,6 @@
     { "path": "/main", "file": "./app/html/main.html" },
     { "path": "/about", "file": "./app/html/about.html" },
     { "path": "/FAQ", "file": "./app/html/FAQ.html" },
-    { "path": "/features", "file": "./app/html/features.html" }
+    { "path": "/features", "file": "./app/html/features.html" },
+    { "path": "/restaurant", "file": "./app/html/restaurant.html" }
 ]
