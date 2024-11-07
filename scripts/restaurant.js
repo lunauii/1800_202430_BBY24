@@ -79,6 +79,9 @@ function populateReviews() {
                 reviewCard.querySelector(".star-rating").innerHTML = starRating;
 
                 restaurantCardGroup.appendChild(reviewCard);
+                
+                document.getElementById('noReviews').style.display = 'none';
+
             });
         });
 }
