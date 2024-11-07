@@ -30,14 +30,34 @@
 
 <!-- BODY -->
 <body>
+    <!-- template for general use, not displayed -->
+    <template id="restaurantCardTemplate">
+        <div class="card mb-3">
+            <img src="..." class="card-img-top card-image" alt="...">
+            <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            <p><small class="text-body-secondary card-location">Last updated 3 mins ago</small></p>
+            <a class="btn btn-primary card-href">More -></a>
+            </div>
+        </div>
+    </template>
+
     <div id="main-container">
         <!-- NavBar -->
         <nav id="navbarPlaceholder"></nav>
 
+        <div class="container">
+            <h1>Hello, <span id="name-goes-here"></span>.</h1>
+            <p>Check out some of the most popular restaurants on our site!</p>
+
+            <hr>
+        </div>
+
         
         <!-- Resturaunts -->
         <div class="container"> 
-            <h1>Some popular restaurants</h1>
+            <h3>Some popular restaurants</h1>
             <!-- Here is the container for cards  -->
             <div class="container">
                 <div id="restaurants-go-here" class="row row-cols-1 row-cols-md-2 g-4">
@@ -51,38 +71,6 @@
 
     </div>
 
-    <!-- Templates for general use, not displayed -->
-    <!-- <template id="restaurantCardTemplate">
-        <div class="card mb-3" style="max-width: 540px;">
-            <div class="row g-0">
-            <div class="col-md-4">
-                <img src="..." class="img-fluid rounded-start card-image" alt="...">
-            </div>
-            <div class="col-md-8">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                    <p class="card-location"><small class="text-body-secondary">Location</small></p>
-                    <a class="btn btn-primary card-href">Read more ...</a>
-                </div>
-            </div>
-            </div>
-        </div>
-    </template> -->
-
-    <template id="restaurantCardTemplate">
-            <div class="card mb-3">
-                <img src="..." class="card-img-top card-image" alt="...">
-                <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                <p class="card-location"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
-                <a class="btn btn-primary card-href">More -></a>
-                </div>
-            </div>
-    </template>
-    
-
     <!---------------------------------------------->
     <!-- Your own JavaScript functions go here    -->
     <!---------------------------------------------->
@@ -92,7 +80,6 @@
     <script src="/scripts/main.js"></script>
     <script src="/scripts/skeleton.js"></script> 
     <script src="/scripts/script.js"></script>
-
 
 </body>
 
