@@ -1,39 +1,3 @@
-<nav id="nav" class="navbar navbar-expand-lg bg-body-tertiary\">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="/"><img src="/images/md-logo-icon-blk.svg" alt="MealDex Logo" height="50px" width="50px"></a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="/home">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Temp Link</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Dropdown
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Menus</a></li>
-            <li><a class="dropdown-item" href="#">Favourite Menus</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Reviews</a></li>
-          </ul>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" aria-disabled="true"></a>
-        </li>
-      </ul>
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-warning mx-2" type="submit" onclick="logout()">Logout</button>
-      </form>
-    </div>
-  </div>
-</nav>
 <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
 <symbol id="mealdex-logo" viewBox="0 0 118 94">
   <title>MealDex</title>
@@ -41,16 +5,25 @@
 </symbol>
 </svg>
 
-<!-- <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-  <div class="container">
-    <a href="#" class="navbar-brand">MealDex</a>
-    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navBar" aria-controls="nav" aria-label="Expand Navigation">
+<nav class="navbar navbar-expand-lg rounded" aria-label="Thirteenth navbar example">
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample11" aria-controls="navbarsExample11" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navBar">
-      <ul class="navbar-nav">
-        
+
+    <div class="collapse navbar-collapse d-lg-flex" id="navbarsExample11">
+      <a class="navbar-brand col-lg-3 me-0"></a>
+      <ul class="navbar-nav col-lg-6 justify-content-lg-center">
+        <li class="nav-item">
+          <a class="navbar-brand" href="/"><img src="/images/md-logo-icon-blk.svg" alt="MealDex Logo" height="50px" width="50px"></a>
+        </li>
       </ul>
+      <div class="d-lg-flex col-lg-3 justify-content-lg-end">
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-warning mx-2" type="submit" onclick="logout()">Logout</button>
+        </form>
+      </div>
     </div>
   </div>
-</nav> -->
+</nav>

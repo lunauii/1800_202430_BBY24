@@ -21,7 +21,6 @@ function populateUserInfo() {
                     // If the data fields are not empty, then write them in to the form.
                     if (userName != null) {
                         document.getElementById("nameInput").value = userName;
-                        document.getElementById("name-goes-here").innerHTML = userName;
                     }
                 })
         } else {
@@ -45,22 +44,36 @@ function saveUserInfo() {
 
     //get the value of the field with id="nameInput"
     userName = document.getElementById('nameInput').value;
-    //get the value of the field with id="schoolInput"
-    /* userSchool = document.getElementById('schoolInput').value;
-    //get the value of the field with id="cityInput"
-    userCity = document.getElementById('cityInput').value; */
 
     // b) update user's document in Firestore
     currentUser.update({
         name: userName,
-        /* school: userSchool,
-        city: userCity */
     })
     .then(() => {
         console.log("Document successfully updated!");
-        populateUserInfo();
+        insertNameFromFirestore();
     })
 
     // c) disable edit 
     document.getElementById('personalInfoFields').disabled = true;
 }
+
+function insertNameFromFirestore() {
+    // Check if the user is logged in:
+    firebase.auth().onAuthStateChanged(user => {
+        if (user) {
+            console.log(user.uid); // Let's know who the logged-in user is by logging their UID
+            currentUser = db.collection("users").doc(user.uid); // Go to the Firestore document of the user
+            currentUser.get().then(userDoc => {
+                // Get the user name
+                let userName = userDoc.data().name;
+                console.log(userName);
+                //$("#name-goes-here").text(userName); // jQuery
+                document.getElementById("name-goes-here").innerText = userName;
+            })
+        } else {
+            console.log("No user is logged in."); // Log a message when no user is logged in
+        }
+    })
+}
+insertNameFromFirestore();

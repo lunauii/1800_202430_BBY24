@@ -25,6 +25,9 @@
     <!-- Link to styles of your own -->
     <!-- <link rel="stylesheet" href="/styles/main-style.css"> -->
 
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="/styles/style.css" rel="stylesheet">
+
 </head>
 
 
@@ -32,15 +35,21 @@
 <body>
     <!-- template for general use, not displayed -->
     <template id="restaurantCardTemplate">
-        <div class="card mb-3">
-            <img src="..." class="card-img-top card-image" alt="...">
-            <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-            <p><small class="text-body-secondary card-location">Last updated 3 mins ago</small></p>
-            <a class="btn btn-primary card-href">More -></a>
+        <div class="card mb-3" style="max-width: 540px;">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="..." class="img-fluid rounded-start card-image h-100 object-fit-cover" alt="...">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                  <p><small class="text-body-secondary card-location">Last updated 3 mins ago</small></p>
+                  <a class="btn btn-primary card-href">More -></a>
+                </div>
+              </div>
             </div>
-        </div>
+          </div>
     </template>
 
     <div id="main-container">
@@ -57,7 +66,6 @@
         
         <!-- Resturaunts -->
         <div class="container"> 
-            <h3>Some popular restaurants</h1>
             <!-- Here is the container for cards  -->
             <div class="container">
                 <div id="restaurants-go-here" class="row row-cols-1 row-cols-md-2 g-4">
