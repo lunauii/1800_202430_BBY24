@@ -23,6 +23,7 @@ function displayRestaurantInfo() {
         } );
 }
 displayRestaurantInfo();
+displayRestaurantInfo();
 
 function saveRestaurantDocumentIDAndRedirect(){
     let params = new URL(window.location.href) //get the url from the search bar
