@@ -35,8 +35,43 @@
     <!-- Your HTML Layout go here -->
     <!------------------------------>
     <!-- Stuff for body goes here -->
+    <div class="container">
+        <br>
+        <h1>Creating menu for <span id="restaurantName">Restaurant Name</span>.</h1>
+        <br>
+        <form>
+            <div class="form-group">
+                <div class="card-body">
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="exampleFormControlTextarea1">Please describe your experience with the restaurant.</label>
+                    <textarea class="form-control" id="description" rows="3"></textarea>
+                </div>
+                <br>
+                <!-- Allergies -->
+                <label>Has your allergies/restrictions<span style="display:inline-block; width: 26pt;"></span></label>
 
-
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="allergies" value="Yes">
+                    <label>Yes</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="allergies" value="No">
+                    <label>No</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="alleriges" value="unSure" checked="">
+                    <label>Not sure</label>
+                </div>
+                <br>
+                <div class="d-flex justify-content-end">
+                    <button type="button" class="btn btn-lg btn-primary pull-right"
+                        onclick="writeReview()">Submit</button>
+                </div>
+            </div>
+        </form>
+    </div>
 
     <nav id="footerPlaceholder"></nav>
 
@@ -47,6 +82,7 @@
     <script src="/scripts/firebaseAPI_BBY24.js"></script>
     <script src="/scripts/skeleton.js"></script> 
     <script src="/scripts/script.js"></script>
+    <script src="/scripts/menu-creation.js"></script>
 
 </body>
 
