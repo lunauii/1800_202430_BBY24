@@ -32,7 +32,7 @@ function saveRestaurantDocumentIDAndRedirect(){
 }
 
 function populateReviews() {
-    console.log("test");
+    // console.log("test");
     let restaurantCardTemplate = document.getElementById("reviewCardTemplate");
     let restaurantCardGroup = document.getElementById("reviewCardGroup");
 
