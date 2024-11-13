@@ -56,7 +56,12 @@ body {
   
 /* Style the individual cards as needed */
 .card {
-    width: 40%; /* Adjust the width as per your design, leaving a little space for margins */
-    margin: 2%; /* Add margin between cards */
-    padding: 0;
+width: 40%; /* Adjust the width as per your design, leaving a little space for margins */
+margin: 2%; /* Add margin between cards */
+padding: 0;
+}
+
+ul {
+    margin: 0% 15% 0%;
+    justify-items: left;
 }
