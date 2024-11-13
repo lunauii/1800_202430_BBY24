@@ -31,6 +31,13 @@ function saveRestaurantDocumentIDAndRedirect(){
     window.location.href = 'review.html';
 }
 
+function saveRestaurantDocumentIDAndRedirectToMenuCreation(){
+    let params = new URL(window.location.href) //get the url from the search bar
+    let ID = params.searchParams.get("docID");
+    localStorage.setItem('restaurantDocID', ID);
+    window.location.href = 'menu-creation.html';
+}
+
 function populateReviews() {
     console.log("test");
     let restaurantCardTemplate = document.getElementById("reviewCardTemplate");
