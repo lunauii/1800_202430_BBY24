@@ -26,6 +26,7 @@
 
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="/styles/style.css" rel="stylesheet">
+    <link href="/images/md-logo-icon-blk.svg" rel="icon" type="image/x-icon" />
 
 </head>
 
@@ -46,7 +47,8 @@
                     <p class="col-lg-8 mx-auto" id="description">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
                     </p>
-                    <button class="btn btn-success m-3" onclick="saveRestaurantDocumentIDAndRedirect()">Write Review</button>
+                    <button class="btn btn-success my-3 mx-1" onclick="saveRestaurantDocumentIDAndRedirect()">Write Review</button>
+                    <button class="btn btn-secondary my-3 mx-1" onclick="saveRestaurantDocumentIDAndRedirectToMenuCreation()">Create Menu</button>
                 </div>
             </div>
         </div>
@@ -82,8 +84,36 @@
                 </div>
             </div>
         </div>
+
+        <!-- START OF TO DO -->
+
+        <!-- Container for Menu Items -->
+        <div class="container"> 
+            <h2>Menu: </h2>
+            <!-- Here is the container for cards  -->
+            <div class="container">
+                <div id="menu-go-here" class="row row-cols-auto">
+                </div>
+            </div>
+        </div>
+
+        <!-- Templates for general use, not displayed -->
+<template id="menuItemCardTemplate">
+    <div class="card py-2 mx-2" style="width: 18rem">
+        <img class="card-image card-img-top" src=" ..." alt="..." />
+        <div class="card-body">
+            <h5 class="card-item">Card title</h5>
+            <p class="card-price">placeholder</p>
+            <br />
+            <a class="btn btn-primary card-href">Ingredients</a>
+        </div>
+    </div>
+</template>
+
+<!-- END OF TO DO -->
+
+
         
-        <!-- TO DO: FIX LINKS WHEN NEW PAGES ARE ADDED-->
         <!-- Footer -->
         <nav id="footerPlaceholder"></nav>
 

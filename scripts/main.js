@@ -54,12 +54,16 @@ insertNameFromFirestore();
 // Input parameter is a string representing the collection we are reading from
 //------------------------------------------------------------------------------
 function displayCardsDynamically(collection) {
+    console.log ("alert0");
   let cardTemplate = document.getElementById("restaurantCardTemplate"); // Retrieve the HTML element with the ID "hikeCardTemplate" and store it in the cardTemplate variable. 
 
   db.collection(collection).get()   //the collection called "hikes"
       .then(allRestaurants=> {
           //var i = 1;  //Optional: if you want to have a unique ID for each hike
+          console.log (allRestaurants.size);
           allRestaurants.forEach(doc => { //iterate thru each doc
+            console.log ("doc.id");
+            console.log (doc.id);
               var title = doc.data().name;       // get value of the "name" key
               var description = doc.data().description;  // get value of the "details" key
               var restaurantCode = doc.data().code;    //get unique ID to each hike to be used for fetching right image
