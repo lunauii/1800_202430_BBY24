@@ -22,7 +22,7 @@ stars.forEach((star, index) => {
         };
 
         for (let i = 4; i > index; i--) {
-            // Change the text content of stars to 'star' (filled)
+            // Change the text content of stars to 'star' (unfilled)
             document.getElementById(`star${i + 1}`).textContent = 'star_outline';
         };
     });
@@ -63,7 +63,8 @@ function writeReview() {
             window.location.href = "/home/";
         });
     } else {
-        console.log("No user is signed in");
+        // No user is signed in.
+        console.log("No user is signed in.");
         window.location.href = '/home/review.html';
     }
 }
