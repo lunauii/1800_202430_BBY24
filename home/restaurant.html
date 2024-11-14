@@ -59,6 +59,38 @@
         <br>
         <hr>
         <br>
+
+        <!-- MENU -->
+
+        <div class="container mb-5">
+            <h2>Menu:</h2>
+            <div id="details-go-here"></div>
+
+            <!-- Here is the container for cards with horizontal scrolling -->
+            <p class="lead" id="noMenus">No menu yet!</p>
+            <div class="card-container">
+                <div id="MenuCardGroup" class="row row-cols-auto">
+                    
+                    
+                    <!-- Add your card templates here -->
+                    <template id="menuCardTemplate">
+                        <div class="card bg-success">
+                            <img class="card-img-top">
+                            <div class="card-body bg-light">
+                                <h5 class="title">placeholder</h5>
+                                <p class="description">This card has supporting text below as a natural lead-in to additional content.</p>
+                                <small class="time text-body-secondary"></small>
+                            </div>
+                        </div>
+                    </template>
+
+
+                </div> 
+            </div> 
+        </div>
+
+
+        <!-- Reviews -->
         
         <div class="container mb-5">
             <h2>Reviews:</h2>
@@ -83,35 +115,6 @@
                 </div>
             </div>
         </div>
-
-        <!-- START OF TO DO -->
-
-        <!-- Container for Menu Items -->
-        <div class="container"> 
-            <h2>Menu: </h2>
-            <!-- Here is the container for cards  -->
-            <div class="container">
-                <div id="menu-go-here" class="row row-cols-auto">
-                </div>
-            </div>
-        </div>
-
-        <!-- Templates for general use, not displayed -->
-<template id="menuItemCardTemplate">
-    <div class="card py-2 mx-2" style="width: 18rem">
-        <img class="card-image card-img-top" src=" ..." alt="..." />
-        <div class="card-body">
-            <h5 class="card-item">Card title</h5>
-            <p class="card-price">placeholder</p>
-            <br />
-            <a class="btn btn-primary card-href">Ingredients</a>
-        </div>
-    </div>
-</template>
-
-<!-- END OF TO DO -->
-
-
         
         <!-- Footer -->
         <nav id="footerPlaceholder"></nav>
