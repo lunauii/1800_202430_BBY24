@@ -1,4 +1,4 @@
-/* function checkIsLoggedIn() {
+function checkIsLoggedIn() {
     firebase.auth().onAuthStateChanged(function (user) {
         if (user) {                   
 		    window.location.replace("/home");
@@ -7,4 +7,4 @@
         }
     });
 }
-checkIsLoggedIn(); */
+checkIsLoggedIn();

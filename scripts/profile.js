@@ -1,6 +1,7 @@
 // Points to the document of the user who is logged in
 var currentUser;
 
+// Populates user profile information.
 function populateUserInfo() {
     firebase.auth().onAuthStateChanged(user => {
         
@@ -30,11 +31,12 @@ function populateUserInfo() {
 
 populateUserInfo();
 
+// Enables form fields
 function editUserInfo() {
-    // Enable the form fields
     document.getElementById('personalInfoFields').disabled = false;
 }
 
+// Saves user info after editing
 function saveUserInfo() {
     // Get the value of the field with id="nameInput"
     userName = document.getElementById('nameInput').value;

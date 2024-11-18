@@ -1,14 +1,18 @@
-var restaurantDocID = localStorage.getItem("restaurantDocID");    //visible to all functions on this page
+// Current restaurant's Firestore document ID
+var restaurantDocID = localStorage.getItem("restaurantDocID");
 
-function getRestaurantName(id) {
+// Displays restaurant name on menu-creation.html
+function displayRestaurantName(id) {
+  // Gets restaurant's Firestore doc
     db.collection("restaurants")
       .doc(id)
       .get()
       .then((thisRestaurant) => {
+        // Displays name from Firestore db
         var restaurantName = thisRestaurant.data().name;
         document.getElementById("restaurantName").innerHTML = restaurantName;
           });
         console.log("restaurantName");
 }
 
-getRestaurantName(restaurantDocID);
+displayRestaurantName(restaurantDocID);
