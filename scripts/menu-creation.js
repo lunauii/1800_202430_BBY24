@@ -10,5 +10,4 @@ function getRestaurantName(id) {
           });
         console.log("restaurantName");
 }
-
 getRestaurantName(restaurantDocID);
