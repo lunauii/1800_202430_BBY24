@@ -16,13 +16,13 @@ const stars = document.querySelectorAll('.star');
 
 stars.forEach((star, index) => {
     star.addEventListener('click', () => {
+        // Fills star + every star to the left of it
         for (let i = 0; i <= index; i++) {
-            // Change the text content of stars to 'star' (filled)
             document.getElementById(`star${i + 1}`).textContent = 'star';
         };
 
+        // Unfills every star to the right of it
         for (let i = 4; i > index; i--) {
-            // Change the text content of stars to 'star' (unfilled)
             document.getElementById(`star${i + 1}`).textContent = 'star_outline';
         };
     });
@@ -31,10 +31,13 @@ stars.forEach((star, index) => {
 // Writes review to Firestore
 function writeReview() {
     console.log("inside write review");
+
+    // Gets restaurant title + desc + allergies
     let restaurantTitle = document.getElementById("title").value;
     let restaurantDescription = document.getElementById("description").value;
     let restaurantAllergies = document.querySelector('input[name="allergies"]:checked').value;
 
+    // Sets star rating for restaurant
     const stars = document.querySelectorAll('.star');
     let restaurantRating = 0;
     stars.forEach((star) => {
@@ -45,12 +48,13 @@ function writeReview() {
 
     console.log(restaurantTitle, restaurantDescription, restaurantAllergies, restaurantRating);
 
+    // Checks if user is signed in before adding the review
     var user = firebase.auth().currentUser;
     if (user) {
         var currentUser = db.collection("users").doc(user.uid);
         var userID = user.uid;
 
-        // Get the document for the current user.
+        // Get the document for the current user
         db.collection("reviews").add({
             restaurantDocID: restaurantDocID,
             userID: userID,

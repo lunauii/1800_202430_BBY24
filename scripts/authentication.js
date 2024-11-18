@@ -1,15 +1,13 @@
-//---------------------------------
-// Your own functions here
-//---------------------------------
-
 // Initialize the FirebaseUI Widget using Firebase.
 var ui = new firebaseui.auth.AuthUI(firebase.auth());
 
+// Borrowed from BCIT COMP 1800 demos.
 var uiConfig = {
     callbacks: {
       signInSuccessWithAuthResult: function (authResult, redirectUrl) {
         
-        var user = authResult.user;                            // get the user object from the Firebase authentication database
+        // Get the user object from the Firebase authentication database
+        var user = authResult.user;
         if (authResult.additionalUserInfo.isNewUser) {         //if new user
             db.collection("users").doc(user.uid).set({         //write to firestore. We are using the UID for the ID in users collection
             // User successfully signed in.
