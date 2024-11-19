@@ -27,52 +27,65 @@ displayRestaurantInfo();
 
 // MENUS
 
-// Bug where wouldn't allow menus to populate and affected reviews, commented out for now
+// Populates menus on restaurant page
+function populateMenus() {
+    console.log("test");
+    let menuCardTemplate = document.getElementById("menuCardTemplate");
+    let restaurantCardGroup = document.getElementById("menuCardGroup");
 
-// function populateMenus() {
-//     console.log("test");
-//     let restaurantCardTemplate = document.getElementById("menuCardTemplate");
-//     let restaurantCardGroup = document.getElementById("menuCardGroup");
+    let params = new URL(window.location.href); // Get the URL from the search bar
+    let restaurantID = params.searchParams.get("docID");
 
-//     let params = new URL(window.location.href); // Get the URL from the search bar
-//     let restaurantID = params.searchParams.get("docID");
+    // Getting menu subcollection from restaurant
+    db.collection("restaurants/" + restaurantID + "/menu")
+        .get()
+        .then((allMenus) => {
+            menu = allMenus.docs;
+            console.log(menu);
+            menu.forEach((doc) => {
+                let name = doc.data().name;
+                let menuID = doc.id;
 
-//     // Double-check: is your collection called "Reviews" or "reviews"?
-//     db.collection("menu")
-//         .where("menuDocID", "==", menuID)
-//         .get()
-//         .then((allMenus) => {
-//             reviews = allMenus.docs;
-//             console.log(menu);
-//             menu.forEach((doc) => {
-//                 var title = doc.data().title;
-//                 // var description = doc.data().description;
-//                 // var allergies = doc.data().allergies;
-//                 // var time = doc.data().timestamp.toDate();
-//                 // var rating = doc.data().rating; // Get the rating value
-//                 // console.log(rating)
-
-//                 // console.log(time);
-
-//                 let menuCard = menuCardTemplate.content.cloneNode(true);
-//                 menuCard.querySelector("#").innerHTML = title;
-
-//                 // reviewCard.querySelector(".allergies").innerHTML = `<b>Has my allergies:</b> ${allergies}`;
-//                 // reviewCard.querySelector( ".description").innerHTML = `<b>Description:</b> ${description}`;
-
-//                 // Populate the star rating based on the rating value
-
-//                 restaurantCardGroup.appendChild(menuCard);
+                // Displaying menu item name
+                let menuCard = menuCardTemplate.content.cloneNode(true);
+                menuCard.querySelector(".name").innerHTML = name;
                 
-//                 document.getElementById('noMenu').style.display = 'none';
+                // Displaying menu ingredients
+                populateIngredients(restaurantID, menuID, menuCard.querySelector(".ingredients"));
 
-//             });
-//         });
-// }
+                // reviewCard.querySelector(".allergies").innerHTML = `<b>Has my allergies:</b> ${allergies}`;
+                // reviewCard.querySelector( ".description").innerHTML = `<b>Description:</b> ${description}`;
 
-// populateMenus();
+                restaurantCardGroup.appendChild(menuCard);
+                
+                document.getElementById('noMenus').style.display = 'none';
 
+            });
+        });
+}
 
+populateMenus();
+
+// Populates ingredients on restaurant page
+function populateIngredients(restaurantID, menuID, htmlElement) {
+
+    // Get ingredients from Firestore
+    db.collection("restaurants/" + restaurantID + "/menu/" + menuID + "/ingredients")
+        .get().then((allItems) => {
+            var menuItem = allItems.docs;
+            // Ingredient string to be appended later
+            let ingredientString = "";
+
+            // Add each item to the string
+            menuItem.forEach((doc) => {
+                itemName = doc.data().name;
+                ingredientString += "<li>" + itemName + "</li>";
+            });
+
+            // Add string to inner HTML
+            htmlElement.innerHTML += ingredientString;
+        });
+}
 
 
 // REVIEWS
@@ -93,7 +106,7 @@ function populateReviews() {
     let restaurantID = params.searchParams.get("docID");
 
     // Find the restaurant's reviews
-    db.collection("reviews")
+    db.collection("reviews/")
         .where("restaurantDocID", "==", restaurantID)
         .get().then((allReviews) => {
             // Log reviews
