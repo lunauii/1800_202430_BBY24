@@ -6,11 +6,7 @@ var uiConfig = {
     callbacks: {
       signInSuccessWithAuthResult: function (authResult, redirectUrl) {
         
-        // Get the user object from the Firebase authentication database
-        var user = authResult.user;
-        if (authResult.additionalUserInfo.isNewUser) {         //if new user
-            db.collection("users").doc(user.uid).set({         //write to firestore. We are using the UID for the ID in users collection
-            // User successfully signed in.
+        // User successfully signed in.
             // Return type determines whether we continue the redirect automatically
             // or whether we leave that to developer to handle.
             //------------------------------------------------------------------------------------------
@@ -20,10 +16,13 @@ var uiConfig = {
             // Assign this user with the name and email provided.
             // Before this works, you must enable "Firestore" from the firebase console.
             // The Firestore rules must allow the user to write. 
-            //------------------------------------------------------------------------------------------      name: user.displayName,                    //"users" collection
-                   name: user.displayName,
+            //------------------------------------------------------------------------------------------
+        var user = authResult.user;
+        if (authResult.additionalUserInfo.isNewUser) {         //if new user
+            db.collection("users").doc(user.uid).set({         //write to firestore. We are using the UID for the ID in users collection
+                   name: user.displayName,                    //"users" collection
                    email: user.email,                         //with authenticated user's ID (user.uid)
-                   admin: false
+                   isAdmin: false
             }).then(function () {
                    console.log("New user added to firestore");
                    window.location.assign("/home");       //re-direct to main.html after signup
