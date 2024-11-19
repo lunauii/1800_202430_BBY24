@@ -14,6 +14,5 @@ function displayRestaurantName(id) {
           });
         console.log("restaurantName");
 }
-getRestaurantName(restaurantDocID);
 
 displayRestaurantName(restaurantDocID);
