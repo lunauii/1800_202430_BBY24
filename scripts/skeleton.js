@@ -18,3 +18,14 @@ function loadSkeleton() {
     });
 }
 loadSkeleton(); //invoke the function
+
+function logout() {
+    firebase.auth().signOut().then(() => {
+        // Sign-out successful.
+        console.log("logging out user");
+        window.location.replace("/login.html");
+      }).catch((error) => {
+        // An error happened.
+        console.log("Error logging out.");
+      });
+}

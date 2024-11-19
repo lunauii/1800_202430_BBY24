@@ -1,16 +1,3 @@
-function logout() {
-    firebase.auth().signOut().then(() => {
-        // Sign-out successful.
-        console.log("logging out user");
-        location.reload(); //reload the page
-      }).catch((error) => {
-        // An error happened.
-        console.log("Error logging out.");
-      });
-}
-
-
-
 function insertNameFromFirestore() {
   // Check if the user is logged in:
   firebase.auth().onAuthStateChanged(user => {
@@ -41,6 +28,7 @@ function displayCardsDynamically(collection) {
 
   db.collection(collection).get()
       .then(allRestaurants => {
+          document.getElementById(collection + "-go-here").innerText = "";
           console.log(allRestaurants.size);
           // Iterate through each doc
           allRestaurants.forEach(doc => {
