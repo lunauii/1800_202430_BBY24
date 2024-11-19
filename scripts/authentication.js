@@ -22,7 +22,8 @@ var uiConfig = {
             // The Firestore rules must allow the user to write. 
             //------------------------------------------------------------------------------------------      name: user.displayName,                    //"users" collection
                    name: user.displayName,
-                   email: user.email                         //with authenticated user's ID (user.uid)
+                   email: user.email,                         //with authenticated user's ID (user.uid)
+                   admin: false
             }).then(function () {
                    console.log("New user added to firestore");
                    window.location.assign("/home");       //re-direct to main.html after signup
