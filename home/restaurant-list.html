@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>MealDex Template</title>
+    <meta name="MealDex" content="MealDex App">
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap Library CSS CDN go here -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- Boostrap Library JS CDN  go here -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!-- Other libraries go here -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script> 
+    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+
+    <!-- Link to styles of your own -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="/styles/style.css">
+    <link href="/images/md-logo-icon-blk.svg" rel="icon" type="image/x-icon" />
+
+</head>
+
+<body>
+    <template id="restaurantCardTemplate">
+        <div class="card mb-3" style="max-width: 540px;">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="..." class="img-fluid rounded-start card-image h-100 object-fit-cover" alt="...">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title text-success">Card title</h5>
+                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                  <p><small class="text-body-secondary card-location">Last updated 3 mins ago</small></p>
+                  <a class="btn btn-primary card-href">More ></a>
+                </div>
+              </div>
+            </div>
+          </div>
+    </template>
+
+    <div id="main-container">
+        <!-- NavBar -->
+        <nav id="navbarPlaceholder"></nav>
+        
+        <!-- Resturaunts -->
+        <div class="container"> 
+            <!-- Here is the container for cards  -->
+            <div class="container">
+                <div id="restaurants-go-here" class="row row-cols-1 row-cols-md-2 g-4">
+
+                  <!-- PLACEHOLDER CARDS THAT WILL GET REMOVED AFTER CARDS LOAD IN -->
+
+                  <div class="card mb-3" aria-hidde="true" style="max-width: 540px;">
+                    <div class="row g-0">
+                      <div class="col-md-4 bg-secondary">
+                        <!-- <img src="..." class="img-fluid rounded-start card-image h-100 object-fit-cover" alt="..."> -->
+                      </div>
+                      <div class="col-md-8">
+                        <div class="card-body">
+                          <h5 class="card-title placeholder-glow">
+                            <span class="placeholder placeholder-lg col-6 bg-success"></span>
+                          </h5>
+                          <p class="card-text placeholder-glow">
+                            <span class="placeholder col-7"></span>
+                            <span class="placeholder col-4"></span>
+                            <span class="placeholder col-4"></span>
+                            <span class="placeholder col-6"></span>
+                            <span class="placeholder col-8"></span>
+                          </p>
+                          <p class="placeholder-glow"><span class="placeholder placeholder-sm col-4"></span></small></p>
+                          <a class="btn btn-primary placeholder card-href col-3" aria-disabled="true"></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="card mb-3" aria-hidde="true" style="max-width: 540px;">
+                    <div class="row g-0">
+                      <div class="col-md-4 bg-secondary">
+                        <!-- <img src="..." class="img-fluid rounded-start card-image h-100 object-fit-cover" alt="..."> -->
+                      </div>
+                      <div class="col-md-8">
+                        <div class="card-body">
+                          <h5 class="card-title placeholder-glow">
+                            <span class="placeholder placeholder-lg col-6 bg-success"></span>
+                          </h5>
+                          <p class="card-text placeholder-glow">
+                            <span class="placeholder col-7"></span>
+                            <span class="placeholder col-4"></span>
+                            <span class="placeholder col-4"></span>
+                            <span class="placeholder col-6"></span>
+                            <span class="placeholder col-8"></span>
+                          </p>
+                          <p class="placeholder-glow"><span class="placeholder placeholder-sm col-4"></span></small></p>
+                          <a class="btn btn-primary placeholder card-href col-3" aria-disabled="true"></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="card mb-3" aria-hidde="true" style="max-width: 540px;">
+                    <div class="row g-0">
+                      <div class="col-md-4 bg-secondary">
+                        <!-- <img src="..." class="img-fluid rounded-start card-image h-100 object-fit-cover" alt="..."> -->
+                      </div>
+                      <div class="col-md-8">
+                        <div class="card-body">
+                          <h5 class="card-title placeholder-glow">
+                            <span class="placeholder placeholder-lg col-6 bg-success"></span>
+                          </h5>
+                          <p class="card-text placeholder-glow">
+                            <span class="placeholder col-7"></span>
+                            <span class="placeholder col-4"></span>
+                            <span class="placeholder col-4"></span>
+                            <span class="placeholder col-6"></span>
+                            <span class="placeholder col-8"></span>
+                          </p>
+                          <p class="placeholder-glow"><span class="placeholder placeholder-sm col-4"></span></small></p>
+                          <a class="btn btn-primary placeholder card-href col-3" aria-disabled="true"></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="card mb-3" aria-hidde="true" style="max-width: 540px;">
+                    <div class="row g-0">
+                      <div class="col-md-4 bg-secondary">
+                        <!-- <img src="..." class="img-fluid rounded-start card-image h-100 object-fit-cover" alt="..."> -->
+                      </div>
+                      <div class="col-md-8">
+                        <div class="card-body">
+                          <h5 class="card-title placeholder-glow">
+                            <span class="placeholder placeholder-lg col-6 bg-success"></span>
+                          </h5>
+                          <p class="card-text placeholder-glow">
+                            <span class="placeholder col-7"></span>
+                            <span class="placeholder col-4"></span>
+                            <span class="placeholder col-4"></span>
+                            <span class="placeholder col-6"></span>
+                            <span class="placeholder col-8"></span>
+                          </p>
+                          <p class="placeholder-glow"><span class="placeholder placeholder-sm col-4"></span></small></p>
+                          <a class="btn btn-primary placeholder card-href col-3" aria-disabled="true"></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="card mb-3" aria-hidde="true" style="max-width: 540px;">
+                    <div class="row g-0">
+                      <div class="col-md-4 bg-secondary">
+                        <!-- <img src="..." class="img-fluid rounded-start card-image h-100 object-fit-cover" alt="..."> -->
+                      </div>
+                      <div class="col-md-8">
+                        <div class="card-body">
+                          <h5 class="card-title placeholder-glow">
+                            <span class="placeholder placeholder-lg col-6 bg-success"></span>
+                          </h5>
+                          <p class="card-text placeholder-glow">
+                            <span class="placeholder col-7"></span>
+                            <span class="placeholder col-4"></span>
+                            <span class="placeholder col-4"></span>
+                            <span class="placeholder col-6"></span>
+                            <span class="placeholder col-8"></span>
+                          </p>
+                          <p class="placeholder-glow"><span class="placeholder placeholder-sm col-4"></span></small></p>
+                          <a class="btn btn-primary placeholder card-href col-3" aria-disabled="true"></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="card mb-3" aria-hidde="true" style="max-width: 540px;">
+                    <div class="row g-0">
+                      <div class="col-md-4 bg-secondary">
+                        <!-- <img src="..." class="img-fluid rounded-start card-image h-100 object-fit-cover" alt="..."> -->
+                      </div>
+                      <div class="col-md-8">
+                        <div class="card-body">
+                          <h5 class="card-title placeholder-glow">
+                            <span class="placeholder placeholder-lg col-6 bg-success"></span>
+                          </h5>
+                          <p class="card-text placeholder-glow">
+                            <span class="placeholder col-7"></span>
+                            <span class="placeholder col-4"></span>
+                            <span class="placeholder col-4"></span>
+                            <span class="placeholder col-6"></span>
+                            <span class="placeholder col-8"></span>
+                          </p>
+                          <p class="placeholder-glow"><span class="placeholder placeholder-sm col-4"></span></small></p>
+                          <a class="btn btn-primary placeholder card-href col-3" aria-disabled="true"></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+
+                </div>
+            </div>
+        </div>
+        
+        <!-- TO DO: FIX LINKS WHEN NEW PAGES ARE ADDED-->
+        <!-- Footer -->
+        <nav id="footerPlaceholder"></nav>
+
+    </div>
+    <!---------------------------------------------->
+    <!-- Your own JavaScript functions go here    -->
+    <!---------------------------------------------->
+     
+    <script src="/scripts/firebaseAPI_BBY24.js"></script>
+    <script src="/scripts/skeleton.js"></script> 
+    <script src="/scripts/script.js"></script>
+    <script src="/scripts/restaurant-list.js"></script>
+
+</body>
+
+</html>
