@@ -39,6 +39,30 @@
     <!-- Stuff for body goes here -->
 
     <div class="container">
+
+        <template id="restrictionBadgeTemplate">
+            <span class="badge d-flex p-2 align-items-center text-danger-emphasis bg-danger-subtle rounded-pill">
+                <span class="px-1 restriction-name">
+                    Restriction Name
+                </span>
+                <a href="#" class="remove-restriction">
+                    <i class="bi ms-1 material-icons text-danger" width="16" height="16">
+                        cancel
+                    </i>
+                </a>
+            </span>
+        </template>
+
+        <template id="dropdownRestrictionItemTemplate">
+            <li>
+                <button class="dropdown-item d-flex align-items-center gap-2 py-2 dropdown-anchor" data-bs-dismiss="modal">
+                    <span class="dropdown-restriction-name">
+                        Placeholder Text
+                    </span>
+                </button>
+            </li>
+        </template>
+
         <h1>User Profile</h1>
 
         <div class="text-center placeholder-glow">
@@ -53,14 +77,33 @@
                     <input type="text" id="nameInput" class="form-control" placeholder="Enter your name">
                 </div>
             </fieldset>
-            <div class="d-flex justify-content-end mt-5">
+            <div class="d-flex justify-content-end">
                 <button type="button" class="btn btn-secondary" onclick="editUserInfo()">Edit</button>
                 <span style="width: 10px"></span>
                 <button type="button" class="btn btn-info" onclick="saveUserInfo()">Save</button>
             </div>
         </form>
+        <hr>
+        <label >Restrictions</label>
+            <button type="button" id="addAllergy" class="btn btn-info mx-2" data-bs-toggle="modal" data-bs-target="#modal-add-allergy">+ Add</button>
+            <div class="d-flex gap-2 py-2" id="badges-go-here">
+                <p class="text-muted">No restrictions yet!</p>
+            </div>
     </div>
 
+    <div class="modal fade" id="modal-add-allergy">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="dropdown-menu d-block position-static pt-0 mx-0 rounded-3 shadow overflow-hidden w-280px" data-bs-theme="light">
+                    <form class="p-2 mb-2 bg-body-tertiary border-bottom">
+                        <input type="search" class="form-control" autocomplete="false" placeholder="Type to filter...">
+                    </form>
+                    <ul class="list-unstyled mb-0" id="allergies-go-here"></ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    
     <!-- Footer -->
     <div id="footerPlaceholder"></div>
 
