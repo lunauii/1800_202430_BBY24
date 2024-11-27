@@ -1,11 +1,10 @@
 function displayRestaurantInfo() {
-    let params = new URL( window.location.href ); //get URL of search bar
-    let ID = params.searchParams.get( "docID" ); //get value for key "id"
-    console.log( ID );
+    let params = new URL(window.location.href); //get URL of search bar
+    let ID = params.searchParams.get("docID"); //get value for key "id"
 
     // doublecheck: is your collection called "Reviews" or "reviews"?
-    db.collection( "restaurants" )
-        .doc( ID )
+    db.collection("restaurants")
+        .doc(ID)
         .get()
         .then( doc => {
             restaurant = doc.data();
@@ -15,21 +14,20 @@ function displayRestaurantInfo() {
             restaurantCode = restaurant.code;
             
             // only populate title, and image
-            document.getElementById( "restaurantName" ).innerHTML = restaurantName;
-            document.getElementById( "restaurantLocation" ).innerHTML = restaurantLocation;
-            document.getElementById( "description" ).innerHTML = description;
+            document.getElementById("restaurantName").innerHTML = restaurantName;
+            document.getElementById("restaurantLocation").innerHTML = restaurantLocation;
+            document.getElementById("description").innerHTML = description;
             /* let imgEvent = document.querySelector( ".restaurant-img" );
             imgEvent.src = "/images/" + restaurantCode + ".jpg"; */
         } );
 }
-displayRestaurantInfo();
+
 displayRestaurantInfo();
 
 // MENUS
 
 // Populates menus on restaurant page
 function populateMenus() {
-    console.log("test");
     let menuCardTemplate = document.getElementById("menuCardTemplate");
     let restaurantCardGroup = document.getElementById("menuCardGroup");
 
@@ -41,7 +39,6 @@ function populateMenus() {
         .get()
         .then((allMenus) => {
             menu = allMenus.docs;
-            console.log(menu);
             menu.forEach((doc) => {
                 let name = doc.data().name;
                 let menuID = doc.id;
@@ -98,7 +95,6 @@ function saveRestaurantDocumentIDAndRedirect(){
 }
 
 function populateReviews() {
-    console.log("test");
     let restaurantCardTemplate = document.getElementById("reviewCardTemplate");
     let restaurantCardGroup = document.getElementById("reviewCardGroup");
 
@@ -111,7 +107,6 @@ function populateReviews() {
         .get().then((allReviews) => {
             // Log reviews
             reviews = allReviews.docs;
-            console.log(reviews);
 
             // For each review, display it
             reviews.forEach((doc) => {
@@ -120,10 +115,6 @@ function populateReviews() {
                 var allergies = doc.data().allergies;
                 var time = doc.data().timestamp.toDate();
                 var rating = doc.data().rating;
-                
-                // Log rating and time of review
-                console.log(rating);
-                console.log(time);
 
                 // Clone template and add review info
                 let reviewCard = restaurantCardTemplate.content.cloneNode(true);

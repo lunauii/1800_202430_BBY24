@@ -1,12 +1,11 @@
-var restaurantDocID = localStorage.getItem("restaurantDocID");    //visible to all functions on this page
+var restaurantDocID = localStorage.getItem("restaurantDocID");
 
 // Gets restaurant name from Firestore
 function getRestaurantName(id) {
     db.collection("restaurants").doc(id).get().then((thisRestaurant) => {
-      var restaurantName = thisRestaurant.data().name;
-      document.getElementById("restaurantName").innerHTML = restaurantName;
-        });
-    console.log("restaurantName");
+        var restaurantName = thisRestaurant.data().name;
+        document.getElementById("restaurantName").innerHTML = restaurantName;
+    });
 }
 
 getRestaurantName(restaurantDocID);
@@ -30,8 +29,6 @@ stars.forEach((star, index) => {
 
 // Writes review to Firestore
 function writeReview() {
-    console.log("inside write review");
-
     // Gets restaurant title + desc + allergies
     let restaurantTitle = document.getElementById("title").value;
     let restaurantDescription = document.getElementById("description").value;
@@ -45,8 +42,6 @@ function writeReview() {
             restaurantRating++;
         }
     });
-
-    console.log(restaurantTitle, restaurantDescription, restaurantAllergies, restaurantRating);
 
     // Checks if user is signed in before adding the review
     var user = firebase.auth().currentUser;
