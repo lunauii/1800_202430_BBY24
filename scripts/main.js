@@ -10,7 +10,12 @@ function insertNameFromFirestore() {
             let userName = userDoc.data().name;
             document.getElementById("name-goes-here").innerText = userName;
         });
-        getBookmarks(user);
+        if (db.collection("users").doc(user.uid).get().then(doc => doc.data().bookmarks.length > 0)) {
+            favoriteRestaurants.innerHTML = "";
+            getBookmarks(user);
+        } else {
+            favoriteRestaurants.innerHTML = "<h2>No bookmarks yet!</h2>";
+        }
     } else {
         // No user is signed in.
         console.log("No user is signed in.");

@@ -146,3 +146,51 @@ function populateReviews() {
 }
 
 populateReviews();
+
+var currentUser;
+
+function hasAllergies() {
+    firebase.auth().onAuthStateChanged(user => {
+        if (user) {
+            currentUser = db.collection("users").doc(user.uid);
+            currentUser.get().then(doc => {
+                let params = new URL(window.location.href);
+                let allergies = doc.data().allergies;
+
+                if (allergies.length > 0) {
+                    let restaurantID = params.searchParams.get("docID");
+
+                    db.collection("restaurants/" + restaurantID + "/menu")
+                    .get()
+                    .then((allMenus) => {
+                        var menuItem = allMenus.docs;
+
+                        // Add each item to the string
+                        menuItem.forEach((doc) => {
+                            if (doc.data().ingredients) {
+                                var ingredientArray = doc.data().ingredients;
+
+                                ingredientArray.forEach(ingredient => {
+                                    if (allergies.includes(ingredient)) {
+                                        document.getElementById('alert-div').style.display = 'block';
+                                        document.getElementById('allergiesList').innerHTML += "<li class='mx-3'><p>" + ingredient + "</p></li>";
+                                    } else {
+                                        console.log("Ingredient not in allergies list");
+                                    }
+                                });
+                            } else {
+                                console.log("No ingredients found");
+                            }
+                        });
+                    });
+                } else {
+                    console.log("No allergies found");
+                }
+            });
+        } else {
+            console.log("No user is signed in");
+        }
+    });
+}
+
+hasAllergies();
