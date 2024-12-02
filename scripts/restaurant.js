@@ -87,10 +87,15 @@ function populateIngredients(restaurantID, menuID, htmlElement) {
 
 // REVIEWS
 
+// Saves the restaurant document ID to local storage and 
 function saveRestaurantDocumentIDAndRedirect(){
-    let params = new URL(window.location.href) //get the url from the search bar
+    // Get URL from search bar
+    let params = new URL(window.location.href);
+    // Get restaurant ID from URL
     let ID = params.searchParams.get("docID");
+    // Set ID in local storage
     localStorage.setItem('restaurantDocID', ID);
+    // Redirect to review.html
     window.location.href = 'review.html';
 }
 
@@ -98,7 +103,8 @@ function populateReviews() {
     let restaurantCardTemplate = document.getElementById("reviewCardTemplate");
     let restaurantCardGroup = document.getElementById("reviewCardGroup");
 
-    let params = new URL(window.location.href); // Get the URL from the search bar
+    // Get the URL from the search bar
+    let params = new URL(window.location.href);
     let restaurantID = params.searchParams.get("docID");
 
     // Find the restaurant's reviews
@@ -149,41 +155,50 @@ populateReviews();
 
 var currentUser;
 
+// Displays a card if the restaurant contains the user's allergies
 function hasAllergies() {
     firebase.auth().onAuthStateChanged(user => {
+        // If user is signed in
         if (user) {
             currentUser = db.collection("users").doc(user.uid);
             currentUser.get().then(doc => {
-                let params = new URL(window.location.href);
+                // Gets user's allergies
                 let allergies = doc.data().allergies;
-
+                // If user has a list of allergies:
                 if (allergies.length > 0) {
+                    // Gets doc ID in URL
+                    let params = new URL(window.location.href);
                     let restaurantID = params.searchParams.get("docID");
 
+                    // Gets list of menu items
                     db.collection("restaurants/" + restaurantID + "/menu")
                     .get()
                     .then((allMenus) => {
                         var menuItem = allMenus.docs;
 
-                        // Add each item to the string
+                        // Adds each item to the card string
                         menuItem.forEach((doc) => {
                             if (doc.data().ingredients) {
                                 var ingredientArray = doc.data().ingredients;
 
                                 ingredientArray.forEach(ingredient => {
+                                    // If user has this ingredient as an allergy
                                     if (allergies.includes(ingredient)) {
                                         document.getElementById('alert-div').style.display = 'block';
                                         document.getElementById('allergiesList').innerHTML += "<li class='mx-3'><p>" + ingredient + "</p></li>";
                                     } else {
+                                        // Ingredient isn't in allergy list
                                         console.log("Ingredient not in allergies list");
                                     }
                                 });
                             } else {
+                                // No ingredients in the menu item
                                 console.log("No ingredients found");
                             }
                         });
                     });
                 } else {
+                    // User doesn't have allergy list
                     console.log("No allergies found");
                 }
             });

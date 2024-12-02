@@ -25,7 +25,7 @@ function getUserRestrictions(user) {
         .then(userDoc => {
 
             // Gets array of user restrictions
-            var userRestrictions = userDoc.data().allergies
+            var userRestrictions = userDoc.data().allergies;
 
             // Points to the badge template
             let newBadgeTemplate = document.getElementById("restrictionBadgeTemplate");
