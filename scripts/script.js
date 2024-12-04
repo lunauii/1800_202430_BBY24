@@ -5,9 +5,9 @@ function logout() {
     firebase.auth().signOut().then(() => {
         // Sign-out successful.
         console.log("logging out user");
-        window.location.replace("/login.html");
+        window.location.replace("/index.html");
       }).catch((error) => {
         // An error happened.
-        console.log("Error logging out.");
+        console.log("Error logging out.", error);
       });
 }
