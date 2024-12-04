@@ -25,7 +25,8 @@ var uiConfig = {
                     name: user.displayName,        // "users" collection
                     email: user.email,             // with authenticated user's ID (user.uid)
                     isAdmin: false,                // no admin perms (admin has to be turned on manually through firestore)
-                    bookmarks: []                  // adds a bookmarks array - otherwise, trying to add bookmarks won't work
+                    bookmarks: [],                 // adds a bookmarks array - otherwise, trying to add bookmarks won't work
+                    allergies: []                  // adds a allergies array - otherwise, trying to add allergies won't work
                 }).then(function () {
                     window.location.assign("/home");           // re-direct to main.html after signup
                 }).catch(function (error) {

@@ -48,16 +48,22 @@
                             <label for="exampleFormControlTextarea1">Item name</label>
                             <textarea class="form-control" id="name" rows="1"></textarea>
                         </div>
-                        <br>
+                        <br/>
                         <!-- Allergies -->
                         <div class="form-group">
                             <label for="exampleFormControlTextarea1">Short Description</label>
                             <textarea class="form-control" id="description" rows="2"></textarea>
                         </div>
-                        <br>
+                        <br/>
+                        <div class="form-group" id="ingredientList">
+                            <label for="exampleFormControlTextarea1">List of Ingredients</label>
+                        </div>
+                        <br/>
                         <div class="d-flex justify-content-end">
+                            <button type="button" class="btn btn-lg btn-primary pull-left mx-2"
+                                onclick="addIngredientRow()">Add ingredient</button>
                             <button type="button" class="btn btn-lg btn-primary pull-right"
-                                onclick="writeReview()">Submit</button>
+                                onclick="writeItem()">Submit</button>
                         </div>
                     </div>
                 </form>
