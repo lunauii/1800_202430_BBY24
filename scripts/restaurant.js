@@ -8,8 +8,8 @@ function displayRestaurantInfo() {
         .get()
         .then( doc => {
             restaurant = doc.data();
-            restaurantName = doc.data().name;
-            restaurantLocation = doc.data().address + ", " + doc.data().city, + ", " + doc.data().region;
+            restaurantName = restaurant.name;
+            restaurantLocation = restaurant.address + ", " + doc.data().city, + ", " + doc.data().region;
             description = restaurant.description;
             restaurantCode = restaurant.code;
             
@@ -41,11 +41,13 @@ function populateMenus() {
             menu = allMenus.docs;
             menu.forEach((doc) => {
                 let name = doc.data().name;
+                let description = doc.data().description;
                 let ingredientString = "";
 
-                // Displaying menu item name
+                // Displaying menu item name and desc
                 let menuCard = menuCardTemplate.content.cloneNode(true);
                 menuCard.querySelector(".name").innerHTML = name;
+                menuCard.querySelector(".description").innerHTML = description;
                 
                 // Displaying menu ingredients
                 for (let i = 0; i < doc.data().ingredients.length; i++) {

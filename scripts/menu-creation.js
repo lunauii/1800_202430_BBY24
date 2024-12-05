@@ -43,19 +43,21 @@ function addIngredientRow() {
 
 // Writes item to Firestore
 function writeItem() {
-    // Gets item name + desc + ingredients
+    // Gets item name + desc
     let itemName = document.getElementById("name").value;
     let itemDescription = document.getElementById("description").value;
+    // Creates ingredient array
     let itemIngredients = [];
 
+    // Adds every ingredient to the array
     for (let index = 1; index < document.getElementById("ingredientList").childElementCount; index++) {
         itemIngredients[index - 1] = document.getElementById("ingredientList").children[index].value;
     }
 
-    // Checks if user is signed in before adding the review
+    // Checks if user is signed in before adding the item
     var user = firebase.auth().currentUser;
     if (user) {
-        // Get the document for the current user
+        // Get the document for the current menu
         db.collection("restaurants/" + restaurantDocID + "/menu").doc(itemName).set({
             name: itemName,
             description: itemDescription,
@@ -67,7 +69,7 @@ function writeItem() {
     } else {
         // No user is signed in.
         console.log("No user is signed in.");
-        window.location.href = '/home/review.html';
+        window.location.href = '/home/menu-creation.html';
     }
 }
 
