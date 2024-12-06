@@ -16,6 +16,13 @@ Our team, Coding for 24h, is developing a the web app MealDex to help people wit
 * Hey all, Marcy here! This project seems pretty cool.
 	
 ## Technology Used
-* HTML, CSS, JavaScript
+* HTML
+* CSS
+* JavaScript
 * Bootstrap 5.0 (Frontend library)
 * Firebase 8.0 (BAAS - Backend as a Service)
+
+## References
+* restaurant-template Picture: https://foodburnaby.ca/restaurants/mintara-restaurant 
+* icon pngs: https://www.flaticon.com/
+* MealDex logo: Angelo Santos 
