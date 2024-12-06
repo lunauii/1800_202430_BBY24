@@ -16,14 +16,18 @@ function insertNameFromFirestore() {
         // Favorite restaurants element
         favoriteRestaurants = document.getElementById("favoriteRestaurants");
         
-        // If the user has bookmarks
-        if (db.collection("users").doc(user.uid).get().then(doc => doc.data().bookmarks.length) > 0) {
-            favoriteRestaurants.innerHTML = "";
-            getBookmarks(user);
-        } else {
-            // No bookmarks
-            favoriteRestaurants.innerHTML = "<p>No bookmarks yet!</p>";
-        }
+        // Displays user's bookmarks
+        db.collection("users").doc(user.uid).get().then(doc => {
+            let bookmarks = doc.data().bookmarks;
+            // If the user has bookmarks
+            if (bookmarks.length > 0) {
+                favoriteRestaurants.innerHTML = "";
+                getBookmarks(user);
+            } else {
+                // No bookmarks
+                favoriteRestaurants.innerHTML = "<p>No bookmarks yet!</p>";
+            }
+        });
 
     } else {
         // No user is signed in.
