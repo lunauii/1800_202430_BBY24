@@ -11,7 +11,7 @@ function getNameFromAuth() {
             $("#name-goes-here").text(userName);
         } else {
             // No user is signed in.
-            console.log("No user is logged in");
+            console.log("No user is signed in.");
         }
     });
 }

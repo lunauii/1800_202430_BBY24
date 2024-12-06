@@ -153,12 +153,14 @@ function insertNameFromFirestore(user) {
 function doAll() {
     firebase.auth().onAuthStateChanged(user => {
         if (user) {
+            // Called when someone's logged in
             insertNameFromFirestore(user);
             populateUserInfo(user);
             getUserRestrictions(user);
             getGlobalRestrictions(user);
         } else {
-            console.log("No user is signed in");
+            // No user is logged in
+            console.log("No user is signed in.");
         }
     });
 }

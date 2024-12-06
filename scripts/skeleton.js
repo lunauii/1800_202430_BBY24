@@ -17,12 +17,13 @@ function loadSkeleton() {
         }
     });
 }
-loadSkeleton(); //invoke the function
+
+loadSkeleton();
 
 function logout() {
     firebase.auth().signOut().then(() => {
         // Sign-out successful.
-        console.log("logging out user");
+        console.log("Logging out user.");
         window.location.replace("/login.html");
       }).catch((error) => {
         // An error happened.

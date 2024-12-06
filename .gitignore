@@ -2,3 +2,8 @@
 *.logs
 .vscode/
 scripts/firebaseAPI_BBY24.js
+.firebaserc
+firebase.json
+firestore.indexes.json
+firestore.rules
+.firebase/

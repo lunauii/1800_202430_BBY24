@@ -7,7 +7,7 @@ function checkIsLoggedIn() {
 		    window.location.replace("/home");
     } else {
         // User doesn't exist.
-        console.log("User is not logged in.");
+        console.log("No user is signed in.");
     }
 }
 checkIsLoggedIn();

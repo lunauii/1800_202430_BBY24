@@ -30,7 +30,7 @@ var uiConfig = {
                 }).then(function () {
                     window.location.assign("/home");           // re-direct to main.html after signup
                 }).catch(function (error) {
-                    console.log("Error adding new user: " + error);
+                    alert("Error adding new user. Try refreshing the page.");
                 });
             } else {
                 return true;

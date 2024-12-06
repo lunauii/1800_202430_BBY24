@@ -1,7 +1,9 @@
 // Inserts a user's name from Firestore.
 function insertNameFromFirestore() {
+
   // Check if the user is logged in:
   firebase.auth().onAuthStateChanged(user => {
+
     if (user) {
         // Go to the Firestore document of the user
         currentUser = db.collection("users").doc(user.uid);
@@ -10,12 +12,19 @@ function insertNameFromFirestore() {
             let userName = userDoc.data().name;
             document.getElementById("name-goes-here").innerText = userName;
         });
-        if (db.collection("users").doc(user.uid).get().then(doc => doc.data().bookmarks.length > 0)) {
+
+        // Favorite restaurants element
+        favoriteRestaurants = document.getElementById("favoriteRestaurants");
+        
+        // If the user has bookmarks
+        if (db.collection("users").doc(user.uid).get().then(doc => doc.data().bookmarks.length) > 0) {
             favoriteRestaurants.innerHTML = "";
             getBookmarks(user);
         } else {
-            favoriteRestaurants.innerHTML = "<h2>No bookmarks yet!</h2>";
+            // No bookmarks
+            favoriteRestaurants.innerHTML = "<p>No bookmarks yet!</p>";
         }
+
     } else {
         // No user is signed in.
         console.log("No user is signed in.");
@@ -27,20 +36,21 @@ insertNameFromFirestore();
 
 // Gets bookmarks, copied from 1800 demo
 function getBookmarks(user) {
+
     // Gets user's Firestore doc
     db.collection("users").doc(user.uid).get()
         .then(userDoc => {
             // Gets user's bookmarks
             var bookmarks = userDoc.data().bookmarks;
             
+            // Gets the template
             let newcardTemplate = document.getElementById("savedCardTemplate");
   
-            // Iterate through the ARRAY of bookmarked hikes (document ID's)
+            // Iterate through the ARRAY of bookmarked hikes (document IDs)
             bookmarks.forEach(restaurantID => {
                 db.collection("restaurants").doc(restaurantID).get().then(doc => {
+                    // Gets name + address + id
                     var title = doc.data().name;
-                    // Commented out because images aren't implemented yet (it costs moneyyy and we're brooooke)
-                    // var hikeCode = doc.data().code;
                     var address = doc.data().address;
                     var docID = doc.id;
                     

@@ -134,20 +134,29 @@ function populateReviews() {
 
             // For each review, display it
             reviews.forEach((doc) => {
+                // Get title + desc + time + rating of review, and whether it contained the user's allergies
                 var title = doc.data().title;
-                var description = doc.data().description;
+                var reviewDescription = doc.data().description;
                 var allergies = doc.data().allergies;
                 var time = doc.data().timestamp.toDate();
                 var rating = doc.data().rating;
 
                 // Clone template and add review info
                 let reviewCard = restaurantCardTemplate.content.cloneNode(true);
-                reviewCard.querySelector(".title").innerHTML = title;
-                reviewCard.querySelector(".time").innerHTML = new Date(
-                    time
-                ).toLocaleString();
+                reviewCard.querySelector(".title").innerText = title;
+                reviewCard.querySelector(".time").innerHTML = new Date(time).toLocaleString();
                 reviewCard.querySelector(".allergies").innerHTML = `<b>Has my allergies:</b> ${allergies}`;
-                reviewCard.querySelector( ".description").innerHTML = `<b>Description:</b> ${description}`;
+
+                // Add review description WITHOUT letting people paste raw HTML
+                boldText = document.createElement("b");
+                text = document.createTextNode("Description: ");
+                boldText.appendChild(text);
+                reviewCard.querySelector(".description").innerHTML = "";
+                reviewCard.querySelector(".description").appendChild(boldText);
+
+                cardDescription = document.createElement("span");
+                cardDescription.innerText = reviewDescription;
+                reviewCard.querySelector(".description").appendChild(cardDescription);
 
                 // Display stars
                 let starRating = "";
@@ -202,16 +211,10 @@ function hasAllergies() {
 
                                 ingredientArray.forEach(ingredient => {
                                     // If user has this ingredient as an allergy
-                                    console.log(restrictionArray);
-                                    // console.log(ingredient);
                                     if (allergies.includes(ingredient) && !restrictionArray.includes(ingredient)) {
                                         document.getElementById('alert-div').style.display = 'block';
                                         document.getElementById('allergiesList').innerHTML += "<li class='mx-3'><p>" + ingredient + "</p></li>";
                                         restrictionArray.push(ingredient);
-                                        console.log(restrictionArray);
-                                    } else {
-                                        // Ingredient isn't in allergy list
-                                        // console.log("Ingredient not in allergies list");
                                     }
                                 });
                             } else {
@@ -226,7 +229,8 @@ function hasAllergies() {
                 }
             });
         } else {
-            console.log("No user is signed in");
+            // User isn't signed in
+            console.log("No user is signed in.");
         }
     });
 }
