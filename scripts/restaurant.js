@@ -8,8 +8,8 @@ function displayRestaurantInfo() {
         .get()
         .then( doc => {
             restaurant = doc.data();
-            restaurantName = doc.data().name;
-            restaurantLocation = doc.data().address + ", " + doc.data().city, + ", " + doc.data().region;
+            restaurantName = restaurant.name;
+            restaurantLocation = restaurant.address + ", " + doc.data().city, + ", " + doc.data().region;
             description = restaurant.description;
             restaurantCode = restaurant.code;
             
@@ -41,14 +41,20 @@ function populateMenus() {
             menu = allMenus.docs;
             menu.forEach((doc) => {
                 let name = doc.data().name;
-                let menuID = doc.id;
+                let description = doc.data().description;
+                let ingredientString = "";
 
-                // Displaying menu item name
+                // Displaying menu item name and desc
                 let menuCard = menuCardTemplate.content.cloneNode(true);
                 menuCard.querySelector(".name").innerHTML = name;
+                menuCard.querySelector(".description").innerHTML = description;
                 
                 // Displaying menu ingredients
-                populateIngredients(restaurantID, menuID, menuCard.querySelector(".ingredients"));
+                for (let i = 0; i < doc.data().ingredients.length; i++) {
+                    itemName = doc.data().ingredients[i];
+                    ingredientString += "<li>" + itemName + "</li>";
+                }
+                menuCard.querySelector(".ingredients").innerHTML = ingredientString;
 
                 // reviewCard.querySelector(".allergies").innerHTML = `<b>Has my allergies:</b> ${allergies}`;
                 // reviewCard.querySelector( ".description").innerHTML = `<b>Description:</b> ${description}`;
@@ -67,7 +73,7 @@ populateMenus();
 function populateIngredients(restaurantID, menuID, htmlElement) {
 
     // Get ingredients from Firestore
-    db.collection("restaurants/" + restaurantID + "/menu/" + menuID + "/ingredients")
+    db.collection("restaurants/" + restaurantID + "/menu/")
         .get().then((allItems) => {
             var menuItem = allItems.docs;
             // Ingredient string to be appended later
@@ -97,6 +103,18 @@ function saveRestaurantDocumentIDAndRedirect(){
     localStorage.setItem('restaurantDocID', ID);
     // Redirect to review.html
     window.location.href = 'review.html';
+}
+
+// Saves the restaurant document ID to local storage and 
+function saveRestaurantDocumentIDAndRedirectToMenuCreation(){
+    // Get URL from search bar
+    let params = new URL(window.location.href);
+    // Get restaurant ID from URL
+    let ID = params.searchParams.get("docID");
+    // Set ID in local storage
+    localStorage.setItem('restaurantDocID', ID);
+    // Redirect to review.html
+    window.location.href = 'menu-creation.html';
 }
 
 function populateReviews() {
@@ -154,6 +172,7 @@ function populateReviews() {
 populateReviews();
 
 var currentUser;
+var restrictionArray = [];
 
 // Displays a card if the restaurant contains the user's allergies
 function hasAllergies() {
@@ -183,12 +202,16 @@ function hasAllergies() {
 
                                 ingredientArray.forEach(ingredient => {
                                     // If user has this ingredient as an allergy
-                                    if (allergies.includes(ingredient)) {
+                                    console.log(restrictionArray);
+                                    // console.log(ingredient);
+                                    if (allergies.includes(ingredient) && !restrictionArray.includes(ingredient)) {
                                         document.getElementById('alert-div').style.display = 'block';
                                         document.getElementById('allergiesList').innerHTML += "<li class='mx-3'><p>" + ingredient + "</p></li>";
+                                        restrictionArray.push(ingredient);
+                                        console.log(restrictionArray);
                                     } else {
                                         // Ingredient isn't in allergy list
-                                        console.log("Ingredient not in allergies list");
+                                        // console.log("Ingredient not in allergies list");
                                     }
                                 });
                             } else {
